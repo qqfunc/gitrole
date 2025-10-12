@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools==80.9.0", "setuptools-scm==9.2.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitrole"
+requires-python = ">= 3.11, < 3.14"
+readme = "README.md"
+license = "Unlicense"
+license-files = ["LICENSE.md"]
+keywords = ["git"]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Software Development :: Version Control :: Git",
+  "Typing :: Typed",
+]
+dynamic = ["version"]
+dependencies = [
+  "pygit2~=1.18.2",
+  "pyyaml~=6.0.3",
+]
+
+[project.scripts]
+gitrole = "gitrole.__main__:main"
+
+[project.urls]
+source = "https://www.github.com/qqfunc/gitrole"
+issues = "https://www.github.com/qqfunc/gitrole/issues"
+
+[dependency-groups]
+dev = [
+  "editorconfig-checker==3.4.0",
+  "lefthook==1.12.4",
+  "pytest==8.4.2",
+  "pytest-xdist==3.8.0",
+  "ruff==0.13.0",
+  "ty==0.0.1a22",
+  "types-setuptools==80.9.0.20250822",
+  "typos==1.36.2",
+]
+gh-actions = [
+  { include-group = "dev" },
+  "pytest-github-actions-annotate-failures==0.3.0",
+]
+
+[tool.mypy]
+exclude = ["^build/"]
+
+[tool.pytest.ini_options]
+addopts = "-n auto"
+
+[tool.ruff]
+line-length = 79
+format.docstring-code-line-length = 72
+lint.select = ["ALL"]
+lint.ignore = [
+  "PYI021", # docstring-in-stub
+  "D203",   # one-blank-line-before-class
+  "D213",   # multi-line-summary-second-line
+  "D418",   # overload-with-docstring
+]
+lint.per-file-ignores."tests/**.py" = [
+  "S101",    # assert
+  "INP001",  # implicit-namespace-package
+  "PLR2004", # magic-value-comparison
+]
+lint.pycodestyle.max-doc-length = 72
+
+[tool.setuptools_scm]
+
+[tool.ty]
+terminal.error-on-warning = true
+
+[tool.typos]
+files.extend-exclude = ["uv.lock"]
+default.unicode = false
