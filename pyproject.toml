@@ -4,8 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gitrole"
-dependencies = []
-requires-python = ">=3.11"
+requires-python = ">= 3.11, < 3.14"
 readme = "README.md"
 license = "Unlicense"
 license-files = ["LICENSE.md"]
@@ -15,17 +14,18 @@ classifiers = [
   "Environment :: Console",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.14",
-  "Programming Language :: Python :: 3.15",
   "Programming Language :: Python :: Implementation :: CPython",
   "Topic :: Software Development :: Version Control :: Git",
   "Typing :: Typed",
 ]
 dynamic = ["version"]
+dependencies = [
+  "pygit2~=1.18.2",
+  "pyyaml~=6.0.3",
+]
 
 [project.scripts]
 gitrole = "gitrole.__main__:main"
@@ -38,10 +38,10 @@ issues = "https://www.github.com/qqfunc/gitrole/issues"
 dev = [
   "editorconfig-checker==3.4.0",
   "lefthook==1.12.4",
-  "mypy==1.17.1",
   "pytest==8.4.2",
   "pytest-xdist==3.8.0",
   "ruff==0.13.0",
+  "ty==0.0.1a22",
   "types-setuptools==80.9.0.20250822",
   "typos==1.36.2",
 ]
@@ -74,6 +74,9 @@ lint.per-file-ignores."tests/**.py" = [
 lint.pycodestyle.max-doc-length = 72
 
 [tool.setuptools_scm]
+
+[tool.ty]
+terminal.error-on-warning = true
 
 [tool.typos]
 files.extend-exclude = ["uv.lock"]
