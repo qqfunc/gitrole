@@ -1,0 +1,15 @@
+{
+  "search.exclude": {
+    "**/uv.lock": true
+  },
+  "ty.disableLanguageServices": true,
+  "[github-actions-workflow]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
+}

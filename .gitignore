@@ -1,8 +1,12 @@
-# Cache
+# Python
 __pycache__/
-
-# Packaging
 *.egg-info/
-
-# Virtual Environments
 .venv/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
