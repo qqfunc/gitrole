@@ -85,7 +85,7 @@ class GitRole:
         sys.exit("No configuration file found.")
 
     def get_config(self) -> dict[str, Any]:
-        """Get the GitRole confiuguration."""
+        """Get the GitRole configuration."""
         extension = ConfigFileExtension(self.config_path.suffix.lstrip("."))
         match extension:
             case ConfigFileExtension.TOML:
