@@ -90,7 +90,9 @@ class GitRole:
     def get_config(self) -> dict[str, Any]:
         """Get the GitRole configuration."""
         try:
-            extension = ConfigFileExtension(self.config_path.suffix.lstrip("."))
+            extension = ConfigFileExtension(
+                self.config_path.suffix.lstrip("."),
+            )
         except ValueError:
             sys.exit(
                 "ERROR: Unsupported configuration file format "
