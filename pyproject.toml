@@ -37,7 +37,7 @@ issues = "https://www.github.com/qqfunc/gitrole/issues"
 [dependency-groups]
 dev = [
   "editorconfig-checker==3.4.0",
-  "lefthook==1.12.4",
+  "lefthook==1.13.6",
   "pytest==8.4.2",
   "pytest-xdist==3.8.0",
   "ruff==0.14.0",
