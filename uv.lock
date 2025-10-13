@@ -51,12 +51,12 @@ wheels = [
 ]
 
 [[package]]
-name = "colorama"
-version = "0.4.6"
+name = "commitlint"
+version = "1.3.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44", size = 27697, upload-time = "2022-10-25T02:36:22.414Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/99/c1/42ee438955d0df9bf311dc4c573a49fb7215d915b224ee49566c6d11a318/commitlint-1.3.1.tar.gz", hash = "sha256:2a0123636bd12cb47f96034af0711d302403e80e47bac815f26c495420929d53", size = 23896, upload-time = "2025-08-25T13:19:35.965Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6", size = 25335, upload-time = "2022-10-25T02:36:20.889Z" },
+    { url = "https://files.pythonhosted.org/packages/78/bb/7413a18bff34f38a0b3283558dc25119c21426964619080e0061aadd3bb0/commitlint-1.3.1-py3-none-any.whl", hash = "sha256:02024a64a785c7b5f2c6accb33415efb61d428b90e0231480ac49b8b07624520", size = 26643, upload-time = "2025-08-25T13:19:35.173Z" },
 ]
 
 [[package]]
@@ -64,15 +64,6 @@ name = "editorconfig-checker"
 version = "3.4.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/80/a8/4cf2ef76cb52a2d3409ed905096b3c2b4a6f39c96305e199b9f8c830980a/editorconfig-checker-3.4.0.tar.gz", hash = "sha256:8e254bf26d8ebbd314626482d0ed4fc59d52b333eac19ad630d4520b6aa468b4", size = 4767, upload-time = "2025-08-14T21:30:21.538Z" }
-
-[[package]]
-name = "execnet"
-version = "2.1.1"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/bb/ff/b4c0dc78fbe20c3e59c0c7334de0c27eb4001a2b2017999af398bf730817/execnet-2.1.1.tar.gz", hash = "sha256:5189b52c6121c24feae288166ab41b32549c7e2348652736540b9e6e7d4e72e3", size = 166524, upload-time = "2024-04-08T09:04:19.245Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/09/2aea36ff60d16dd8879bdb2f5b3ee0ba8d08cbbdcdfe870e695ce3784385/execnet-2.1.1-py3-none-any.whl", hash = "sha256:26dee51f1b80cebd6d0ca8e74dd8745419761d3bef34163928cbebbdc4749fdc", size = 40612, upload-time = "2024-04-08T09:04:17.414Z" },
-]
 
 [[package]]
 name = "gitrole"
@@ -84,21 +75,9 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "commitlint" },
     { name = "editorconfig-checker" },
     { name = "lefthook" },
-    { name = "pytest" },
-    { name = "pytest-xdist" },
-    { name = "ruff" },
-    { name = "ty" },
-    { name = "types-setuptools" },
-    { name = "typos" },
-]
-gh-actions = [
-    { name = "editorconfig-checker" },
-    { name = "lefthook" },
-    { name = "pytest" },
-    { name = "pytest-github-actions-annotate-failures" },
-    { name = "pytest-xdist" },
     { name = "ruff" },
     { name = "ty" },
     { name = "types-setuptools" },
@@ -113,34 +92,13 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "commitlint", specifier = "==1.3.1" },
     { name = "editorconfig-checker", specifier = "==3.4.0" },
     { name = "lefthook", specifier = "==1.13.6" },
-    { name = "pytest", specifier = "==8.4.2" },
-    { name = "pytest-xdist", specifier = "==3.8.0" },
     { name = "ruff", specifier = "==0.14.0" },
     { name = "ty", specifier = "==0.0.1a22" },
     { name = "types-setuptools", specifier = "==80.9.0.20250822" },
     { name = "typos", specifier = "==1.38.1" },
-]
-gh-actions = [
-    { name = "editorconfig-checker", specifier = "==3.4.0" },
-    { name = "lefthook", specifier = "==1.13.6" },
-    { name = "pytest", specifier = "==8.4.2" },
-    { name = "pytest-github-actions-annotate-failures", specifier = "==0.3.0" },
-    { name = "pytest-xdist", specifier = "==3.8.0" },
-    { name = "ruff", specifier = "==0.14.0" },
-    { name = "ty", specifier = "==0.0.1a22" },
-    { name = "types-setuptools", specifier = "==80.9.0.20250822" },
-    { name = "typos", specifier = "==1.38.1" },
-]
-
-[[package]]
-name = "iniconfig"
-version = "2.1.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f2/97/ebf4da567aa6827c909642694d71c9fcf53e5b504f2d96afea02718862f3/iniconfig-2.1.0.tar.gz", hash = "sha256:3abbd2e30b36733fee78f9c7f7308f2d0050e88f0087fd25c2645f63c773e1c7", size = 4793, upload-time = "2025-03-19T20:09:59.721Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/2c/e1/e6716421ea10d38022b952c159d5161ca1193197fb744506875fbb87ea7b/iniconfig-2.1.0-py3-none-any.whl", hash = "sha256:9deba5723312380e77435581c6bf4935c94cbfab9b1ed33ef8d238ea168eb760", size = 6050, upload-time = "2025-03-19T20:10:01.071Z" },
 ]
 
 [[package]]
@@ -150,24 +108,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/aa/f2/26e8014966b6c5b3ea1e170afb773967b5dc2eebcae77b20b66d958264ee/lefthook-1.13.6.tar.gz", hash = "sha256:1e46aa23bcefcf58c05542bb987f975b3b6a1fc6c1e902c48d1cddfc9b39fad7", size = 55409157, upload-time = "2025-09-30T13:08:37.875Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fd/38/83f3e214893cacb1e0d48c780ec715815e0fbb2c88e1d0af5d1b56d536d6/lefthook-1.13.6-py3-none-any.whl", hash = "sha256:46a72eee2b6a04d248b5defdbe803d089067a613443513b4f139b9aff9cad26d", size = 55676007, upload-time = "2025-09-30T13:08:34.143Z" },
-]
-
-[[package]]
-name = "packaging"
-version = "25.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz", hash = "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f", size = 165727, upload-time = "2025-04-19T11:48:59.673Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl", hash = "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484", size = 66469, upload-time = "2025-04-19T11:48:57.875Z" },
-]
-
-[[package]]
-name = "pluggy"
-version = "1.6.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz", hash = "sha256:7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3", size = 69412, upload-time = "2025-05-15T12:30:07.975Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl", hash = "sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746", size = 20538, upload-time = "2025-05-15T12:30:06.134Z" },
 ]
 
 [[package]]
@@ -214,56 +154,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ba/f8/d61973ec64a6a7afabec5d1308794399797b44daaacf7ae1969b0f83ddab/pygit2-1.18.2-cp313-cp313-win_amd64.whl", hash = "sha256:aeba6398d5c689c90c133e07f698aeb9f9693cfbb5707fccffd18f2d67d37c6d", size = 1324597, upload-time = "2025-08-16T13:43:31.309Z" },
     { url = "https://files.pythonhosted.org/packages/57/91/f6655a5d171c0a080a7507b8d6855067f4365b326c0d946c6af12a633a80/pygit2-1.18.2-pp311-pypy311_pp73-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:d801d272f6331e067bd0d560671311d1ce4bb8f81536675706681ed44cc0d7dc", size = 5317765, upload-time = "2025-08-16T13:39:34.222Z" },
     { url = "https://files.pythonhosted.org/packages/5c/c8/288d1a56092b3e01524d03eeff24a85efc4eaa3861c6813e3098cde9ee02/pygit2-1.18.2-pp311-pypy311_pp73-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:2e1ff2d60420c98e6e25fd188069cddf8fa7b0417db7405ce7677a2f546e6b03", size = 5042134, upload-time = "2025-08-16T13:39:35.871Z" },
-]
-
-[[package]]
-name = "pygments"
-version = "2.19.2"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz", hash = "sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887", size = 4968631, upload-time = "2025-06-21T13:39:12.283Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl", hash = "sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b", size = 1225217, upload-time = "2025-06-21T13:39:07.939Z" },
-]
-
-[[package]]
-name = "pytest"
-version = "8.4.2"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32'" },
-    { name = "iniconfig" },
-    { name = "packaging" },
-    { name = "pluggy" },
-    { name = "pygments" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/a3/5c/00a0e072241553e1a7496d638deababa67c5058571567b92a7eaa258397c/pytest-8.4.2.tar.gz", hash = "sha256:86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01", size = 1519618, upload-time = "2025-09-04T14:34:22.711Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a8/a4/20da314d277121d6534b3a980b29035dcd51e6744bd79075a6ce8fa4eb8d/pytest-8.4.2-py3-none-any.whl", hash = "sha256:872f880de3fc3a5bdc88a11b39c9710c3497a547cfa9320bc3c5e62fbf272e79", size = 365750, upload-time = "2025-09-04T14:34:20.226Z" },
-]
-
-[[package]]
-name = "pytest-github-actions-annotate-failures"
-version = "0.3.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "pytest" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/39/d4/c54ee6a871eee4a7468e3a8c0dead28e634c0bc2110c694309dcb7563a66/pytest_github_actions_annotate_failures-0.3.0.tar.gz", hash = "sha256:d4c3177c98046c3900a7f8ddebb22ea54b9f6822201b5d3ab8fcdea51e010db7", size = 11248, upload-time = "2025-01-17T22:39:32.722Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/6d/73/7b0b15cb8605ee967b34aa1d949737ab664f94e6b0f1534e8339d9e64ab2/pytest_github_actions_annotate_failures-0.3.0-py3-none-any.whl", hash = "sha256:41ea558ba10c332c0bfc053daeee0c85187507b2034e990f21e4f7e5fef044cf", size = 6030, upload-time = "2025-01-17T22:39:31.701Z" },
-]
-
-[[package]]
-name = "pytest-xdist"
-version = "3.8.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "execnet" },
-    { name = "pytest" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/78/b4/439b179d1ff526791eb921115fca8e44e596a13efeda518b9d845a619450/pytest_xdist-3.8.0.tar.gz", hash = "sha256:7e578125ec9bc6050861aa93f2d59f1d8d085595d6551c2c90b6f4fad8d3a9f1", size = 88069, upload-time = "2025-07-01T13:30:59.346Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ca/31/d4e37e9e550c2b92a9cbc2e4d0b7420a27224968580b5a447f420847c975/pytest_xdist-3.8.0-py3-none-any.whl", hash = "sha256:202ca578cfeb7370784a8c33d6d05bc6e13b4f25b5053c30a152269fd10f0b88", size = 46396, upload-time = "2025-07-01T13:30:56.632Z" },
 ]
 
 [[package]]
