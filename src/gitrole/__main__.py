@@ -9,7 +9,7 @@ from . import GitRole
 
 
 class Arguments:
-    """A classs for GitRole CLI arguments."""
+    """A class for GitRole CLI arguments."""
 
     role: str
     config: str | None
