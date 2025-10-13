@@ -43,7 +43,7 @@ dev = [
   "ruff==0.14.0",
   "ty==0.0.1a22",
   "types-setuptools==80.9.0.20250822",
-  "typos==1.36.2",
+  "typos==1.38.1",
 ]
 gh-actions = [
   { include-group = "dev" },
