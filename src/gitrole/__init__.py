@@ -15,6 +15,7 @@ from typing import Any
 
 import pygit2
 import yaml
+from filelock import FileLock
 
 
 class ConfigFileExtension(StrEnum):
@@ -57,14 +58,15 @@ class GitRole:
             else pygit2.Repository(".").config
         )
 
-        try:
-            self.previous_role = self.git_config["gitrole.role"]
-        except KeyError:
-            self.previous_role = None
+        with FileLock(self.lock_path):
+            try:
+                self.previous_role = self.git_config["gitrole.role"]
+            except KeyError:
+                self.previous_role = None
 
-        self.config = self.get_config()
-        self.reset_previous_role()
-        self.apply_role()
+            self.config = self.get_config()
+            self.reset_previous_role()
+            self.apply_role()
 
     @property
     def xdg_config_home(self) -> Path:
@@ -86,6 +88,11 @@ class GitRole:
                 return config_path
 
         sys.exit("ERROR: No configuration file found.")
+
+    @property
+    def lock_path(self) -> Path:
+        """Get the GitRole lock file path."""
+        return self.xdg_config_home / "gitrole/gitrole.lock"
 
     def get_config(self) -> dict[str, Any]:
         """Get the GitRole configuration."""
