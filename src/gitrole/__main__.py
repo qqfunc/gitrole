@@ -40,6 +40,10 @@ def main(args: Sequence[str] | None = None) -> None:
     parsed_args = parser.parse_args(args, Arguments())
 
     try:
-        GitRole(parsed_args.role, parsed_args.config, global_=parsed_args.global_)
+        GitRole(
+            parsed_args.role,
+            parsed_args.config,
+            global_=parsed_args.global_,
+        )
     except (IsADirectoryError, FileNotFoundError, ValueError, KeyError) as e:
-        sys.exit(e)
+        sys.exit(f"error: {e}")
