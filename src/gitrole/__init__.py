@@ -6,7 +6,6 @@ __all__ = ["GitRole"]
 
 import json
 import os
-import sys
 import tomllib
 from enum import StrEnum
 from os import PathLike
@@ -46,11 +45,10 @@ class GitRole:
             self.config_path = Path(config_path)
             if not self.config_path.is_file():
                 if self.config_path.is_dir():
-                    sys.exit(f"ERROR: {self.config_path} is a directory")
-                sys.exit(
-                    f"ERROR: Configuration file '{self.config_path}' not "
-                    "found",
-                )
+                    msg = f"{self.config_path} is a directory"
+                    raise IsADirectoryError(msg)
+                msg = f"Configuration file '{self.config_path}' not found"
+                raise FileNotFoundError(msg)
 
         self.git_config = (
             pygit2.Config.get_global_config()
@@ -87,7 +85,8 @@ class GitRole:
             if config_path.is_file():
                 return config_path
 
-        sys.exit("ERROR: No configuration file found.")
+        msg = "No configuration file found."
+        raise FileNotFoundError(msg)
 
     @property
     def lock_path(self) -> Path:
@@ -101,10 +100,11 @@ class GitRole:
                 self.config_path.suffix.lstrip("."),
             )
         except ValueError:
-            sys.exit(
-                "ERROR: Unsupported configuration file format "
-                f"'{self.config_path.suffix}'.",
+            msg = (
+                "Unsupported configuration file format "
+                f"'{self.config_path.suffix}'."
             )
+            raise ValueError(msg) from None
         match extension:
             case ConfigFileExtension.TOML:
                 with self.config_path.open("rb") as f:
@@ -131,19 +131,20 @@ class GitRole:
     def apply_role(self) -> None:
         """Apply the Git configuration for the specified role."""
         if (config := self.config.get(self.role)) is None:
-            sys.exit(
-                f"ERROR: Role '{self.role}' not found in configuration file "
-                f"{self.config_path}.",
+            msg = (
+                f"Role '{self.role}' not found in configuration file "
+                f"{self.config_path}."
             )
+            raise KeyError(msg)
 
         if not isinstance(config, dict):
-            sys.exit(f"ERROR: Invalid configuration for role '{self.role}'.")
+            msg = f"Invalid configuration for role '{self.role}'."
+            raise TypeError(msg)
 
         for key, value in config.items():
             if not isinstance(value, str):
-                sys.exit(
-                    f"ERROR: Invalid value for '{key}' in role '{self.role}'.",
-                )
+                msg = f"Invalid value for '{key}' in role '{self.role}'."
+                raise TypeError(msg)
             self.git_config[key] = value
 
         self.git_config["gitrole.role"] = self.role
