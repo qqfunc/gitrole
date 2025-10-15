@@ -2,8 +2,7 @@
 
 ## Setup
 
-- Install dependencies and build project with `uv sync`
-- Install Git Hooks with `uv run lefthook install`
+After cloning the repository, install dependencies with `uv sync`.
 
 ## Coding Conventions
 
@@ -11,8 +10,7 @@ Follow PEP 8.
 
 ## Commands
 
-- Run all checks with `uv run lefthook run check`
-- Fix all problems with `uv run lefthook run fix`
+Run the following commands after changing the code.
 
 ### editorconfig-checker
 
@@ -45,3 +43,4 @@ Type-check Python code with ty.
 ## Commit Messages
 
 Follow Conventional Commits.
+Pull request titles should also follow Conventional Commits.
