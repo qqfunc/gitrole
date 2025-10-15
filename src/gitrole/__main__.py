@@ -2,6 +2,7 @@
 
 __all__ = ["main"]
 
+import sys
 from argparse import ArgumentParser
 from collections.abc import Sequence
 
@@ -38,4 +39,7 @@ def main(args: Sequence[str] | None = None) -> None:
 
     parsed_args = parser.parse_args(args, Arguments())
 
-    GitRole(parsed_args.role, parsed_args.config, global_=parsed_args.global_)
+    try:
+        GitRole(parsed_args.role, parsed_args.config, global_=parsed_args.global_)
+    except (IsADirectoryError, FileNotFoundError, ValueError, KeyError) as e:
+        sys.exit(e)
