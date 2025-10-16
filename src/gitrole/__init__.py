@@ -116,6 +116,25 @@ class GitRole:
                 with self.config_path.open("rb") as f:
                     return yaml.safe_load(f)
 
+    def _flatten_config(
+        self,
+        config: dict[str, Any],
+        parent_key: str = "",
+    ) -> dict[str, str]:
+        items: dict[str, str] = {}
+        for key, value in config.items():
+            new_key = f"{parent_key}.{key}" if parent_key else key
+            if isinstance(value, dict):
+                items.update(self._flatten_config(value, new_key))
+            else:
+                if not isinstance(value, str):
+                    msg = (
+                        f"Invalid value for '{new_key}' in role '{self.role}'."
+                    )
+                    raise TypeError(msg)
+                items[new_key] = value
+        return items
+
     def reset_previous_role(self) -> None:
         """Reset to the previous Git configuration."""
         if (
@@ -125,7 +144,7 @@ class GitRole:
         ):
             return
 
-        for key in config:
+        for key in self._flatten_config(config):
             del self.git_config[key]
 
     def apply_role(self) -> None:
@@ -141,10 +160,7 @@ class GitRole:
             msg = f"Invalid configuration for role '{self.role}'."
             raise TypeError(msg)
 
-        for key, value in config.items():
-            if not isinstance(value, str):
-                msg = f"Invalid value for '{key}' in role '{self.role}'."
-                raise TypeError(msg)
+        for key, value in self._flatten_config(config).items():
             self.git_config[key] = value
 
         self.git_config["gitrole.role"] = self.role
