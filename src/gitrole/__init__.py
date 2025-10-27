@@ -108,13 +108,34 @@ class GitRole:
         match extension:
             case ConfigFileExtension.TOML:
                 with self.config_path.open("rb") as f:
-                    return tomllib.load(f)
+                    try:
+                        return tomllib.load(f)
+                    except tomllib.TOMLDecodeError as e:
+                        msg = (
+                            f"Failed to parse TOML configuration file "
+                            f"'{self.config_path}': {e}"
+                        )
+                        raise ValueError(msg) from e
             case ConfigFileExtension.JSON:
                 with self.config_path.open("rb") as f:
-                    return json.load(f)
+                    try:
+                        return json.load(f)
+                    except json.JSONDecodeError as e:
+                        msg = (
+                            f"Failed to parse JSON configuration file "
+                            f"'{self.config_path}': {e}"
+                        )
+                        raise ValueError(msg) from e
             case ConfigFileExtension.YML | ConfigFileExtension.YAML:
                 with self.config_path.open("rb") as f:
-                    return yaml.safe_load(f)
+                    try:
+                        return yaml.safe_load(f)
+                    except yaml.YAMLError as e:
+                        msg = (
+                            f"Failed to parse YAML configuration file "
+                            f"'{self.config_path}': {e}"
+                        )
+                        raise ValueError(msg) from e
 
     def _flatten_config(
         self,
