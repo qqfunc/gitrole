@@ -46,9 +46,6 @@ dev = [
   "typos==1.38.1",
 ]
 
-[tool.mypy]
-exclude = ["^build/"]
-
 [tool.pytest.ini_options]
 addopts = "-n auto"
 
