@@ -12,12 +12,12 @@
   },
   "packageRules": [
     {
-      "managers": ["pep621"],
+      "matchManagers": ["pep621"],
       "matchPackageNames": ["python"],
       "enabled": false
     },
     {
-      "managers": ["github-actions"],
+      "matchManagers": ["github-actions"],
       "matchPackageNames": ["python"],
       "enabled": false
     }
