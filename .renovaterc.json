@@ -15,11 +15,6 @@
       "matchManagers": ["pep621"],
       "matchPackageNames": ["python"],
       "enabled": false
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "matchDepNames": ["python"],
-      "enabled": false
     }
   ]
 }
