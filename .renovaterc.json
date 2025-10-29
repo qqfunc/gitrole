@@ -9,5 +9,17 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["at any time"]
-  }
+  },
+  "packageRules": [
+    {
+      "managers": ["pep621"],
+      "matchPackageNames": ["python"],
+      "enabled": false
+    },
+    {
+      "managers": ["github-actions"],
+      "matchPackageNames": ["python"],
+      "enabled": false
+    }
+  ]
 }
