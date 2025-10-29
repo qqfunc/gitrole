@@ -8,17 +8,27 @@
   "automergeStrategy": "squash",
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["at any time"]
+    "schedule": [
+      "at any time"
+    ]
   },
   "packageRules": [
     {
-      "managers": ["pep621"],
-      "matchPackageNames": ["python"],
+      "matchManagers": [
+        "pep621"
+      ],
+      "matchPackageNames": [
+        "python"
+      ],
       "enabled": false
     },
     {
-      "managers": ["github-actions"],
-      "matchPackageNames": ["python"],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "python"
+      ],
       "enabled": false
     }
   ]
