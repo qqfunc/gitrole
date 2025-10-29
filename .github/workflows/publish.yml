@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  run:
+    name: Publish to PyPI
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout ${{ github.repository }}
+      uses: actions/checkout@v5.0.0
+    - name: Install Python
+      uses: actions/setup-python@v6.0.0
+      with:
+        python-version: '3.14'
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7.1.2
+      with:
+        enable-cache: true
+    - name: Build
+      run: uv build
+    - name: Publish
+      run: uv publish
+    - name: Prune uv cache
+      run: uv cache prune --ci
