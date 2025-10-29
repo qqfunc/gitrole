@@ -18,7 +18,7 @@
     },
     {
       "matchManagers": ["github-actions"],
-      "matchPackageNames": ["python"],
+      "matchDepNames": ["python"],
       "enabled": false
     }
   ]
