@@ -35,8 +35,8 @@ dependencies = [
 gitrole = "gitrole.__main__:main"
 
 [project.urls]
-source = "https://www.github.com/qqfunc/gitrole"
-issues = "https://www.github.com/qqfunc/gitrole/issues"
+Source = "https://www.github.com/qqfunc/gitrole"
+Issues = "https://www.github.com/qqfunc/gitrole/issues"
 
 [dependency-groups]
 dev = [
