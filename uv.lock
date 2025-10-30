@@ -61,9 +61,9 @@ wheels = [
 
 [[package]]
 name = "editorconfig-checker"
-version = "3.4.0"
+version = "3.4.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/80/a8/4cf2ef76cb52a2d3409ed905096b3c2b4a6f39c96305e199b9f8c830980a/editorconfig-checker-3.4.0.tar.gz", hash = "sha256:8e254bf26d8ebbd314626482d0ed4fc59d52b333eac19ad630d4520b6aa468b4", size = 4767, upload-time = "2025-08-14T21:30:21.538Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/18/61/b48245542a9fba03537d27d4e65686290bc7e409659d0424d8be5df05a47/editorconfig_checker-3.4.1.tar.gz", hash = "sha256:11468139bd1545b96a8ee54ed7dbc9f065082e0a0d6575a22050773bbcfed6c1", size = 4781, upload-time = "2025-10-29T21:47:08.99Z" }
 
 [[package]]
 name = "filelock"
@@ -104,7 +104,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "commitlint", specifier = "==1.3.1" },
-    { name = "editorconfig-checker", specifier = "==3.4.0" },
+    { name = "editorconfig-checker", specifier = "==3.4.1" },
     { name = "lefthook", specifier = "==2.0.2" },
     { name = "ruff", specifier = "==0.14.2" },
     { name = "ty", specifier = "==0.0.1a25" },
