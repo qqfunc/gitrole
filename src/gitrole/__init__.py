@@ -66,18 +66,10 @@ class GitRole:
             self.reset_previous_role()
             self.apply_role()
 
-    @property
-    def xdg_config_home(self) -> Path:
-        """Get the XDG Config Home directory.
-
-        XDG Base Directory: https://wiki.archlinux.org/title/XDG_Base_Directory
-        """
-        return Path(os.getenv("XDG_CONFIG_HOME", "~/.config")).expanduser()
-
     def get_config_path(self) -> Path:
         """Get the GitRole configuration path."""
         for ext in ConfigFileExtension:
-            config_path = self.xdg_config_home / f"gitrole/gitrole.{ext}"
+            config_path = _get_xdg_config_home() / f"gitrole/gitrole.{ext}"
             if config_path.is_file():
                 return config_path
 
@@ -181,3 +173,11 @@ class GitRole:
             self.git_config[key] = value
 
         self.git_config["gitrole.role"] = self.role
+
+
+def _get_xdg_config_home() -> Path:
+    """Get the XDG Config Home directory.
+
+    See `XDG Base Directory <https://wiki.archlinux.org/title/XDG_Base_Directory>`__.
+    """
+    return Path(os.getenv("XDG_CONFIG_HOME", "~/.config")).expanduser()
