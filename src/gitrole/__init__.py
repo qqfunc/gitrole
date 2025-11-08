@@ -76,12 +76,8 @@ class GitRole:
 
     def get_config_path(self) -> Path:
         """Get the GitRole configuration path."""
-        config_paths = [
-            self.xdg_config_home / f"gitrole/gitrole.{ext}"
-            for ext in ConfigFileExtension
-        ]
-
-        for config_path in config_paths:
+        for ext in ConfigFileExtension:
+            config_path = self.xdg_config_home / f"gitrole/gitrole.{ext}"
             if config_path.is_file():
                 return config_path
 
