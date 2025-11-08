@@ -85,7 +85,7 @@ class GitRole:
         """Get the GitRole configuration."""
         try:
             extension = ConfigFileExtension(
-                self.config_path.suffix.lstrip("."),
+                self.config_path.suffix.removeprefix("."),
             )
         except ValueError:
             msg = (
