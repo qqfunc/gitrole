@@ -45,7 +45,7 @@ dev = [
   "lefthook==2.0.15",
   "ruff==0.14.14",
   "ty==0.0.1a25",
-  "typos==1.42.1",
+  "typos==1.42.3",
 ]
 
 [tool.pytest.ini_options]
