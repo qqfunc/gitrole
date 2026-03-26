@@ -43,7 +43,7 @@ dev = [
   "commitlint==1.13.3",
   "editorconfig-checker==3.6.1",
   "lefthook==2.1.4",
-  "ruff==0.15.7",
+  "ruff==0.15.8",
   "ty==0.0.1a25",
   "typos==1.44.0",
 ]
