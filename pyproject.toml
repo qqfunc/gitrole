@@ -41,7 +41,7 @@ Issues = "https://www.github.com/qqfunc/gitrole/issues"
 [dependency-groups]
 dev = [
   "commitlint==2.0.0",
-  "editorconfig-checker==3.6.1",
+  "editorconfig-checker==3.8.0",
   "lefthook==2.1.10",
   "ruff==0.15.22",
   "ty==0.0.1a25",
