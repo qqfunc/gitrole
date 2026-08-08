@@ -27,7 +27,7 @@ classifiers = [
 dynamic = ["version"]
 dependencies = [
   "filelock~=3.32.0",
-  "pygit2~=1.19.0",
+  "pygit2~=1.20.0",
   "pyyaml~=6.0.3",
 ]
 
