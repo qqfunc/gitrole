@@ -42,7 +42,7 @@ Issues = "https://www.github.com/qqfunc/gitrole/issues"
 dev = [
   "commitlint==2.0.0",
   "editorconfig-checker==3.11.1",
-  "lefthook==2.1.11",
+  "lefthook==2.1.12",
   "ruff==0.15.22",
   "ty==0.0.1a25",
   "typos==1.49.1",
