@@ -44,7 +44,7 @@ dev = [
   "editorconfig-checker==3.11.1",
   "lefthook==2.1.12",
   "ruff==0.15.22",
-  "ty==0.0.1a25",
+  "ty==0.0.78",
   "typos==1.50.1",
 ]
 
