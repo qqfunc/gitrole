@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.1](https://github.com/qqfunc/gitrole/compare/v0.1.0...v0.1.1) (2026-09-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency filelock to ~=3.21.0 ([#96](https://github.com/qqfunc/gitrole/issues/96)) ([d09d158](https://github.com/qqfunc/gitrole/commit/d09d158296ea200739f4f2b3c13011cc81e7386d))
+* **deps:** update dependency filelock to ~=3.23.0 ([#100](https://github.com/qqfunc/gitrole/issues/100)) ([d5140e5](https://github.com/qqfunc/gitrole/commit/d5140e51a7f9d2ee94fe3329b9c99f79c12b68b8))
+* **deps:** update dependency filelock to ~=3.24.0 ([#101](https://github.com/qqfunc/gitrole/issues/101)) ([2e3bf8a](https://github.com/qqfunc/gitrole/commit/2e3bf8ac6ace4475c22a315b495a4cd8e45ace67))
+* **deps:** update dependency filelock to ~=3.25.0 ([#111](https://github.com/qqfunc/gitrole/issues/111)) ([3667c5d](https://github.com/qqfunc/gitrole/commit/3667c5d4d7cfa9826e49e238abb0556b16778aa2))
+* **deps:** update dependency filelock to ~=3.28.0 ([#136](https://github.com/qqfunc/gitrole/issues/136)) ([cd3eb22](https://github.com/qqfunc/gitrole/commit/cd3eb225ebea5fd871076816fe19e05b7f709d1b))
+* **deps:** update dependency filelock to ~=3.29.0 ([#141](https://github.com/qqfunc/gitrole/issues/141)) ([18b26f2](https://github.com/qqfunc/gitrole/commit/18b26f282bda48a1374ac292f1ce657d94af67a8))
+* **deps:** update dependency filelock to ~=3.30.0 ([#183](https://github.com/qqfunc/gitrole/issues/183)) ([49a7911](https://github.com/qqfunc/gitrole/commit/49a7911b015f42bc43f1babeb74eded4e2b2d432))
+* **deps:** update dependency filelock to ~=3.31.0 ([#187](https://github.com/qqfunc/gitrole/issues/187)) ([402effa](https://github.com/qqfunc/gitrole/commit/402effa7ec5d30efe7458f4c5fb99094b582bc75))
+* **deps:** update dependency filelock to ~=3.32.0 ([#193](https://github.com/qqfunc/gitrole/issues/193)) ([d237791](https://github.com/qqfunc/gitrole/commit/d2377915bd2ab4f614d440a6501d7ebaec279a31))
+* **deps:** update dependency pygit2 to ~=1.20.0 ([#200](https://github.com/qqfunc/gitrole/issues/200)) ([5cb3d87](https://github.com/qqfunc/gitrole/commit/5cb3d8791da3e40e2452bdf307ef9ec1cc271e6e))
+
 ## 0.1.0 (2025-10-30)
 
 
